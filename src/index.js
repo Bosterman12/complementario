@@ -4,6 +4,7 @@ import mongoose from "mongoose"
 import { userModel } from "./models/Users.js"
 import { productModel} from "./models/Products.js"
 import { cartModel } from "./models/Cart.js"
+import { messageModel } from "./models/messages.js"
 
 const app = express()
 
@@ -100,15 +101,15 @@ mongoose.connect(process.env.URL_MONGODB_ATLAS)
 
 /*await cartModel.create([
      {
-        type: [
+        products: [
             {
-                id_prod:
-                    "QR1"
+                
+                 id_prod:  "646ab7810fd7f5adc1cac8c7"
                 ,
-                cant: 5
+                 cant: 5
             }
-        ],
-        default:[]
+        ]
+       
     }
 ])*/
 
