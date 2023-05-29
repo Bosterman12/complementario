@@ -1,4 +1,7 @@
 import { Schema, model } from "mongoose";
+import paginate from "mongoose-paginate-v2";
+
+
 
 const userSchema = new Schema ({
     
@@ -12,7 +15,8 @@ const userSchema = new Schema ({
     },
     email: {
         type: String,
-        unique: true
+        unique: true,
+        index: true
     },
     gender: {
         type: String,
@@ -24,4 +28,9 @@ const userSchema = new Schema ({
     },
 })
 
+userSchema.plugin(paginate)
+
 export const userModel = model("users", userSchema)
+
+/*const userModel = model("users", userSchema)
+export default userModel*/

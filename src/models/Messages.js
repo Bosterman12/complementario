@@ -1,4 +1,6 @@
 import { Schema, model } from "mongoose";
+import paginate from "mongoose-paginate-v2";
+
 
 const messageSchema = new Schema({
     user:{
@@ -12,4 +14,5 @@ const messageSchema = new Schema({
     
 })
 
+messageSchema.plugin(paginate)
 export const messageModel = model( "messages", messageSchema)
